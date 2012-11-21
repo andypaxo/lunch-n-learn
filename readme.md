@@ -16,8 +16,7 @@
 
 * Get RSpec through bundler (Gemfile, Gemfile.lock)
 * Add some specs and a file to spec (scoreboard.rb, scoreboard_spec.rb)
-* Run RSpec (or create script, remember to chmod u+x)
-    $ bundle exec rspec spec/
+* Run RSpec (or create script, remember to chmod u+x) use `$ bundle exec rspec spec/`
 * TDD it out
 * Add sinatra (web.rb, Gemfile, Procfile)
 * Run with foreman

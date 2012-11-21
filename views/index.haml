@@ -2,4 +2,10 @@
 	%head
 		%title High scores
 	%body
-		%p= stats.to_s
+		- stats.each do |name, cards|
+			%h2= name
+			%ul
+				- cards.each do |card|
+					%li
+						%b= card[:game]
+						%span= card[:score]

@@ -2,13 +2,16 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'sinatra'
-require 'scoreboard'
+require 'lib/scoreboard'
 
 scores = Scoreboard.new
 
+scores.add({:name=>'Regis', :game=>'WoW', :score=>'Level 50'})
+scores.add({:name=>'Regis', :game=>'LoTR', :score=>'Level 34'})
+scores.add({:name=>'Adam', :game=>'Halo', :score=>'6700'})
+
 get '/' do
-	scores.player_stats.to_s
-	haml :index
+	haml :index, :locals => { :stats => scores.player_stats }
 end
 
 get '/add/:name/:game/:score' do

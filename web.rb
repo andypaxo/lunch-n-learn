@@ -7,7 +7,8 @@ require 'scoreboard'
 scores = Scoreboard.new
 
 get '/' do
-	return scores.player_stats.to_s
+	scores.player_stats.to_s
+	haml :index
 end
 
 get '/add/:name/:game/:score' do
@@ -16,5 +17,5 @@ get '/add/:name/:game/:score' do
 		:game => params[:game],
 		:score => params[:score]
 	})
-	return 'Added score'
+	'Added score'
 end

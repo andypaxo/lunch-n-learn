@@ -12,6 +12,6 @@ class Scoreboard
 	end
 	
 	def player_stats
-		@scores.group_by { |s| s['name'] }
+		@scores.group_by { |s| s[:name] }
 	end
 end
